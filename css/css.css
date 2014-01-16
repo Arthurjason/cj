@@ -209,6 +209,14 @@ color:#fff;
 text-shadow: 1px 1px 1px #000;
 
 }
+.arc_body{
+text-shadow: 1px 1px 1px #000;
+color: #fff;
+}#ds-thread #ds-reset .ds-comment-body {
+padding-left: 60px;
+text-shadow: 1px 1px 1px #000;
+color: #fff;
+}
 /* @group   styles
 -----------------------------------------------------*/
 
