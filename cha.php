@@ -7,7 +7,7 @@ return;
 }
 
 if(!$_POST){
-$data="<b style='color: red;font-size: 22px;'>请输入账号密码进行查询。<a href='index.htm'>点击返回上一页</a></b>";
+$data="<b style='color: red;font-size: 22px;'>请输入账号密码进行查询。<a href='index.html'>点击返回上一页</a></b>";
 }
 $zjh=$_POST['zjh'];
 $mm=$_POST['mm'];
@@ -31,7 +31,7 @@ curl_setopt($ch,CURLOPT_COOKIEFILE,$cookie_file);
 $data=curl_exec($ch);
 $nodata="/\/img\/icon\/alert.gif/";
 if (preg_match($nodata, $data)) {
-    $data="<b style='color: red;font-size: 22px;'>密码输入错误或服务器繁忙，请稍后再试！<a href='index.htm'>点击返回上一页</a></b>";
+    $data="<b style='color: red;font-size: 22px;'>密码输入错误或服务器繁忙，请稍后再试！<a href='index.html'>点击返回上一页</a></b>";
 }
 $patterns="/\t/";
 $replacements="";
@@ -131,7 +131,7 @@ curl_close($ch);
       </div>
       <div class="arc_body"> 
  <? echo $data ?> 
- <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.htm">再次查询</a></p>
+ <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a></p>
 	  </div>
     </div>
 	<!--
