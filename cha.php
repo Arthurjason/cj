@@ -2,7 +2,7 @@
 $parse_url=parse_url($_SERVER[HTTP_REFERER]);
 $url_from=$parse_url[host];
 if($url_from!='www.ldustu.com'){
-echo "<script>location.href='index.htm'</script>";
+echo "<script>location.href='index.html'</script>";
 return;
 }
 
