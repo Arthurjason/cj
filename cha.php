@@ -22,7 +22,22 @@ curl_setopt($ch,CURLOPT_COOKIEJAR,$cookie_file);
 curl_setopt($ch, CURLOPT_POSTFIELDS,$post); 
 curl_exec($ch);
 curl_close($ch);
-
+$type=$_GET['type'];
+if($type=='all'){
+	
+		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=qbinfo';
+		$ch = curl_init() ;  
+		curl_setopt($ch, CURLOPT_URL,$url) ; 
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch,CURLOPT_COOKIEFILE,$cookie_file);
+		$data=curl_exec($ch);
+		$nodata="/\/img\/icon\/alert.gif/";
+		if (preg_match($nodata, $data)) {
+			$data="<b style='color: red;font-size: 22px;'>密码输入错误或服务器繁忙，请稍后再试！<a href='index.html'>点击返回上一页</a></b>";
+		}
+		
+		curl_close($ch); 
+}else{
 $url='http://202.194.48.11:9004/bxqcjcxAction.do';
 $ch = curl_init() ;  
 curl_setopt($ch, CURLOPT_URL,$url) ; 
@@ -58,7 +73,7 @@ $patterns="/\<table\swidth\=\"100\%\"\sborder\=\"0\"\scellpadding\=\"0\"\scellsp
 $replacements="";
 $data=preg_replace($patterns, $replacements, $data,1);
 curl_close($ch); 
-
+}
 ?>
 
 
