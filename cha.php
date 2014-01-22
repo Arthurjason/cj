@@ -26,7 +26,7 @@ curl_close($ch);
 $type=$_GET['type'];
 if($type=='all'){
 	
-		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=fa';
+		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=qbinfo';
 		$ch = curl_init() ;  
 		curl_setopt($ch, CURLOPT_URL,$url) ; 
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
