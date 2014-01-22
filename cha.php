@@ -13,6 +13,11 @@ $zjh=$_POST['zjh'];
 $mm=$_POST['mm'];
 $url='http://202.194.48.11:9004/loginAction.do';
 $post="zjh=$zjh&mm=$mm";
+
+$cookie_file=$_GET['cookie'];
+$type=$_GET['ck'];
+
+if($cookie_file==''){
 $cookie_file=tempnam('./tmp','cookie');
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
@@ -22,8 +27,7 @@ curl_setopt($ch,CURLOPT_COOKIEJAR,$cookie_file);
 curl_setopt($ch, CURLOPT_POSTFIELDS,$post); 
 curl_exec($ch);
 curl_close($ch);
-
-$type=$_GET['type'];
+}
 if($type=='all'){
 	
 		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=qbinfo';
@@ -39,41 +43,41 @@ if($type=='all'){
 		
 		curl_close($ch); 
 }else{
-$url='http://202.194.48.11:9004/bxqcjcxAction.do';
-$ch = curl_init() ;  
-curl_setopt($ch, CURLOPT_URL,$url) ; 
-curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-curl_setopt($ch,CURLOPT_COOKIEFILE,$cookie_file);
-$data=curl_exec($ch);
-$nodata="/\/img\/icon\/alert.gif/";
-if (preg_match($nodata, $data)) {
-    $data="<b style='color: red;font-size: 22px;'>密码输入错误或服务器繁忙，请稍后再试！<a href='index.html'>点击返回上一页</a></b>";
-}
-$patterns="/\t/";
-$replacements="";
-$data=preg_replace($patterns, $replacements, $data);
-$patterns="/\n/";
-$replacements="";
-$data=preg_replace($patterns, $replacements, $data);
-$patterns="/\<div\salign\=\"right\"\>/";
-$replacements="<div style='display:none;'>";
-$data=preg_replace($patterns, $replacements, $data);
-$patterns="/\&nbsp\;\<b\>/";
-$replacements="<b style='display:none;'>";
-$data=preg_replace($patterns, $replacements, $data);
-$patterns="/onMouseOut\=\"this.className\=\'even\'\;\"\sonMouseOver\=\"this\.className\=\'evenfocus\'\;\"/";
-$replacements="";
-$data=preg_replace($patterns, $replacements, $data);
-$patterns="/class\=\"\w*\"/";
-$replacements="";
-$data=preg_replace($patterns, $replacements, $data);
-$patterns="/id\=\"\w*\"/";
-$replacements="";
-$data=preg_replace($patterns, $replacements, $data);
-$patterns="/\<table\swidth\=\"100\%\"\sborder\=\"0\"\scellpadding\=\"0\"\scellspacing\=\"0\"\s>/";
-$replacements="";
-$data=preg_replace($patterns, $replacements, $data,1);
-curl_close($ch); 
+		$url='http://202.194.48.11:9004/bxqcjcxAction.do';
+		$ch = curl_init() ;  
+		curl_setopt($ch, CURLOPT_URL,$url) ; 
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch,CURLOPT_COOKIEFILE,$cookie_file);
+		$data=curl_exec($ch);
+		$nodata="/\/img\/icon\/alert.gif/";
+		if (preg_match($nodata, $data)) {
+			$data="<b style='color: red;font-size: 22px;'>密码输入错误或服务器繁忙，请稍后再试！<a href='index.html'>点击返回上一页</a></b>";
+		}
+		$patterns="/\t/";
+		$replacements="";
+		$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/\n/";
+		$replacements="";
+		$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/\<div\salign\=\"right\"\>/";
+		$replacements="<div style='display:none;'>";
+		$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/\&nbsp\;\<b\>/";
+		$replacements="<b style='display:none;'>";
+		$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/onMouseOut\=\"this.className\=\'even\'\;\"\sonMouseOver\=\"this\.className\=\'evenfocus\'\;\"/";
+		$replacements="";
+		$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/class\=\"\w*\"/";
+		$replacements="";
+		$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/id\=\"\w*\"/";
+		$replacements="";
+		$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/\<table\swidth\=\"100\%\"\sborder\=\"0\"\scellpadding\=\"0\"\scellspacing\=\"0\"\s>/";
+		$replacements="";
+		$data=preg_replace($patterns, $replacements, $data,1);
+		curl_close($ch); 
 }
 ?>
 
@@ -147,7 +151,7 @@ curl_close($ch);
       </div>
       <div class="arc_body"> 
  <? echo $data ?> 
- <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a></p>
+ <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a> | <a href="./cha.php?type=all&ck=<? $cookie_file?>">查历学期成绩</a></p>
 	  </div>
     </div>
 	<!--
