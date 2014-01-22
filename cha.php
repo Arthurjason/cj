@@ -14,8 +14,8 @@ $mm=$_POST['mm'];
 $url='http://202.194.48.11:9004/loginAction.do';
 $post="zjh=$zjh&mm=$mm";
 
-$cookie_file=$_GET['cookie'];
-$type=$_GET['ck'];
+$cookie_file=$_GET['ck'];
+$type=$_GET['type'];
 
 if($cookie_file==''){
 $cookie_file=tempnam('./tmp','cookie');
@@ -28,8 +28,8 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,$post);
 curl_exec($ch);
 curl_close($ch);
 }
+
 if($type=='all'){
-	
 		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=qbinfo';
 		$ch = curl_init() ;  
 		curl_setopt($ch, CURLOPT_URL,$url) ; 
