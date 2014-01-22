@@ -190,9 +190,9 @@ border-radius: 8px;
 background: #414141;
 box-shadow: inset 0px 0px 5px 0px #fff;
 }
-.cha a{
-text-shadow: 1px 1px 1px #fff;
-color: #000;
+.cha a {
+text-shadow: 1px 1px 1px #332F2F;
+color: #FFF;
 }
 .rec_content a{
 text-shadow: 1px 1px 1px #000;
