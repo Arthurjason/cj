@@ -151,7 +151,7 @@ if($type=='all'){
       </div>
       <div class="arc_body"> 
  <? echo $data ?> 
- <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a> | <a href="./cha.php?type=all&ck=<? $cookie_file?>">查历学期成绩</a></p>
+ <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a> | <a href="./cha.php?type=all&ck=<? echo $cookie_file?>">查历学期成绩</a></p>
 	  </div>
     </div>
 	<!--
