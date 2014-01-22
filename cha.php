@@ -22,10 +22,11 @@ curl_setopt($ch,CURLOPT_COOKIEJAR,$cookie_file);
 curl_setopt($ch, CURLOPT_POSTFIELDS,$post); 
 curl_exec($ch);
 curl_close($ch);
+
 $type=$_GET['type'];
 if($type=='all'){
 	
-		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=qbinfo';
+		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=fa';
 		$ch = curl_init() ;  
 		curl_setopt($ch, CURLOPT_URL,$url) ; 
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
