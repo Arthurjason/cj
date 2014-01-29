@@ -17,7 +17,7 @@ curl_close($ch);
 	
 
 
-$url='http://202.194.48.13:9004/reportFiles/cj/cj_zwcjd.jsp';
+$url='http://218.56.38.235:8000/rewriter/JXXT/http/1Z19083937904.7Z/reportFiles/cj/cj_zwcjd.jsp';
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0) ;
@@ -37,7 +37,7 @@ preg_match_all($pa,$fl_array,$id);
 echo $id[0];
 
 
-$url='http://202.194.48.13:9004/setReportParams';
+$url='http://218.56.38.235:8000/rewriter/JXXT/http/1Z19083937904.7Z/setReportParams';
 $post="LS_XH=$xh";
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
@@ -49,10 +49,10 @@ curl_exec($ch);
 curl_close($ch);
 
 
-$url='http://202.194.48.13:9004/reportFiles/cj/cj_zwcjd.jsp?reportParamsId='.$id[0];
+$url='http://218.56.38.235:8000/rewriter/JXXT/http/1Z19083937904.7Z/reportFiles/cj/cj_zwcjd.jsp?reportParamsId='.$id[0];
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1) ;
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0) ;
 $data=curl_exec($ch);
 curl_close($ch);
 
