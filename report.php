@@ -5,7 +5,7 @@ if(!empty($_POST['xh'])){
 	
 
 
-$url='http://202.194.48.11:9004/cj_zwcjd.jsp';
+$url='http://202.194.48.11:9004/cj/cj_zwcjd.jsp';
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1) ;
@@ -34,7 +34,7 @@ curl_exec($ch);
 curl_close($ch);
 
 
-$url='http://202.194.48.11:9004/cj_zwcjd.jsp&reportParamsId='.$id;
+$url='http://202.194.48.11:9004/cj/cj_zwcjd.jsp&reportParamsId='.$id;
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0) ;
