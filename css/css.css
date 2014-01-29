@@ -195,8 +195,7 @@ text-shadow: 1px 1px 1px #332F2F;
 color: #FFF;
 }
 .rec_content a{
-text-shadow: 1px 1px 1px #000;
-color: #fff;
+color: #000;
 }
 .research{
 font-size:24px;
@@ -205,17 +204,14 @@ text-align:center;
 
 }
 .research a{
-color:#fff;
-text-shadow: 1px 1px 1px #000;
+color:#000;
 
 }
 .arc_body{
-text-shadow: 1px 1px 1px #000;
-color: #fff;
+color: #000;
 }#ds-thread #ds-reset .ds-comment-body {
 padding-left: 60px;
-text-shadow: 1px 1px 1px #000;
-color: #fff;
+color: #000;
 }
 /* @group   styles
 -----------------------------------------------------*/
