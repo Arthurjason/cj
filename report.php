@@ -15,4 +15,5 @@ curl_close($ch);
 
 <form method="post">
 <input type="text">
+<input type="submit" value="罪恶">
 </form>
