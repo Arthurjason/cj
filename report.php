@@ -1,15 +1,48 @@
 <?php
 if(!empty($_POST['xh'])){
 	$xh=$_POST['xh'];
+	
+	
+
+
+$url='http://202.194.48.11:9004/cj_zwcjd.jsp';
+$ch = curl_init($url) ;
+curl_setopt($ch,CURLOPT_HEADER,0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1) ;
+curl_setopt($ch, CURLOPT_POST,1) ; 
+curl_setopt($ch, CURLOPT_POSTFIELDS,$post); 
+$data=curl_exec($ch);
+curl_close($ch);
+
+$fl_array = preg_grep("/reportParamsId\"\svalue\=\"\"/", $data);
+
+$pa='"reportParamsId" value="(.*?)"';
+
+
+preg_match_all($pa,$fl_array,$id);
+
+
+
 $url='http://202.194.48.11:9004/setReportParams';
 $post="LS_XH=$xh";
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0) ;
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1) ;
 curl_setopt($ch, CURLOPT_POST,1) ; 
 curl_setopt($ch, CURLOPT_POSTFIELDS,$post); 
 curl_exec($ch);
 curl_close($ch);
+
+
+$url='http://202.194.48.11:9004/cj_zwcjd.jsp&reportParamsId='.$id;
+$ch = curl_init($url) ;
+curl_setopt($ch,CURLOPT_HEADER,0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0) ;
+$data=curl_exec($ch);
+curl_close($ch);
+
+
+
 }
 ?>
 
