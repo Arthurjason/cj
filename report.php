@@ -35,7 +35,7 @@ curl_exec($ch);
 curl_close($ch);
 
 
-$url='http://202.194.48.11:9004/cj/cj_zwcjd.jsp&reportParamsId='.$id[0];
+$url='http://202.194.48.11:9004/cj/cj_zwcjd.jsp?reportParamsId='.$id[0];
 $ch = curl_init($url) ;
 curl_setopt($ch,CURLOPT_HEADER,0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0) ;
