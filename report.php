@@ -1,6 +1,6 @@
 <?php
-if(empty($_POST['xh'])){
-	$xx=$_POST['xh'];
+if(!empty($_POST['xh'])){
+	$xh=$_POST['xh'];
 }
 $url='http://202.194.48.11:9004/setReportParams';
 $post="LS_XH=$xh";
