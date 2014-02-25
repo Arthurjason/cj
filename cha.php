@@ -5,7 +5,6 @@ if($url_from!='www.ldustu.com'){
 echo "<script>location.href='index.html'</script>";
 return;
 }
-
 if(!$_POST){
 $data="<b style='color: red;font-size: 22px;'>请输入账号密码进行查询。<a href='index.html'>点击返回上一页</a></b>";
 }
@@ -42,7 +41,27 @@ if($type=='all'){
 		}
 		
 		curl_close($ch); 
-}else{
+}else if($type=='gk'){
+		$url='http://202.194.48.11:9004/gradeLnAllAction.do?type=ln&oper=bjg';
+		$ch = curl_init() ;  
+		curl_setopt($ch, CURLOPT_URL,$url) ; 
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch,CURLOPT_COOKIEFILE,$cookie_file);
+		$data=curl_exec($ch);
+		$nodata="/\/img\/icon\/alert.gif/";
+		if (preg_match($nodata, $data)) {
+			$data="<b style='color: red;font-size: 22px;'>密码输入错误或服务器繁忙，请稍后再试！<a href='index.html'>点击返回上一页</a></b>";
+		}
+		$patterns="/width\=\"350\"/";
+		$replacements='width="350" style="display:none;"';
+		$date=$data=preg_replace($patterns, $replacements, $data);
+		$patterns="/id\=\"tblHead\"/";
+		$replacements='id="tblHead" style="display:none;"';
+		$date=$data=preg_replace($patterns, $replacements, $data);
+		
+		curl_close($ch);
+		
+		}else{
 		$url='http://202.194.48.11:9004/bxqcjcxAction.do';
 		$ch = curl_init() ;  
 		curl_setopt($ch, CURLOPT_URL,$url) ; 
@@ -151,7 +170,7 @@ if($type=='all'){
       </div>
       <div class="arc_body"> 
  <? echo $data ?> 
- <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a> | <a href="./cha.php?type=all&ck=<? echo $cookie_file?>">查历学期成绩</a></p>
+ <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a> | <a href="./cha.php?type=all&ck=<? echo $cookie_file?>">查历学期成绩</a>| <a href="./cha.php?type=gk&ck=<? echo $cookie_file?>">查挂科科目</a></p>
 	  </div>
     </div>
 	<!--
