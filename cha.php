@@ -170,6 +170,7 @@ if($type=='all'){
       </div>
       <div class="arc_body"> 
  <? echo $data ?> 
+ 这个学期好像还没开始考试呢！查以往学期成绩请点击查历学期成绩，这里不显示挂科科目，如果想知道就点击查挂科科目。
  <p class="research"><a href="http://www.ldustu.com">进入学生网首页</a> | <a href="./index.html">再次查询</a> | <a href="./cha.php?type=all&ck=<? echo $cookie_file?>">查历学期成绩</a>| <a href="./cha.php?type=gk&ck=<? echo $cookie_file?>">查挂科科目</a></p>
 	  </div>
     </div>
