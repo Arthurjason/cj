@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html >
+    
+    <head>
+    	<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta charset="GB2312">
+        <title>本学期成绩单</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    
+    <body>
+    <div id="data" style="display:none"><?php echo $data;?></div>
+        <div class="cj-wrap">
+        <h1 class="cj-title">本学期成绩</h1>
+        <p class="cj-tip">
+        	本成绩是来源于教务信息网的真实成绩，成绩信息绝对保密，绝对不会保存同学们的信息与成绩。
+        </p>
+        <p class="cj-tip2">
+        	点击单科成绩可查看科目详情。
+        </p>
+        	<ul class="cj-box">
+        	</ul>
+            <p class="cj-tip3">
+                <a href="index.php">点击这里再次查询</a>
+                关注"鲁大学生网"官方微信，把成绩放进口袋，获取更多内容！
+                <br> 我们的微信号：LDSN001
+            </p>
+ <!-- Duoshuo Comment BEGIN -->
+  <div class="ds-thread" data-thread-key="3769" data-title="成绩单" ></div>
+
+<!-- Duoshuo Comment END -->
+        </div>
+    </body>
+    <script src="./js/jquery.js"></script>
+    <script>
+    (function(){
+    if($('#data').text()=='mima'){
+        alert('密码错误或者服务器出现问题，请重试。');
+        location.href="index.php";
+        return;
+    }
+    var tr = $($('table')[5]).find('tr');
+    var chengji = [];
+	for(var i = 1; i < tr.length; i++ ) {
+		var td = $(tr[i]).find('td');
+		var item = {
+				kch: $(td[0]).text().replace(/(^\s*)|(\s*$)/g, ""), 
+				kxh: $(td[1]).text().replace(/(^\s*)|(\s*$)/g, ""), 
+				kcm: $(td[2]).text().replace(/(^\s*)|(\s*$)/g, ""), 
+				ywkcm: $(td[3]).text().replace(/(^\s*)|(\s*$)/g, ""), 
+				xf: $(td[4]).text().replace(/(^\s*)|(\s*$)/g, ""), 
+				kcsx: $(td[5]).text().replace(/(^\s*)|(\s*$)/g, ""), 
+				cj: $(td[6]).text().replace(/(^\s*)|(\s*$)/g, ""), 
+			}
+            if (!item.cj) item.cj = '还没出';
+		chengji.push(item);
+	}
+
+
+	var text = '';
+	for ( var i = 0; i < chengji.length; i++ ){
+		text += '<li class="cj-item">'
+        			+ '<div class="cj-top clearfix">'
+        				+ '<div class="title">' + chengji[i].kcm + '</div>'
+        				+ '<div class="content">' + chengji[i].cj + '</div>'
+        			+ '</div>'
+        			+ '<ul class="cj-info">'
+        				+ '<li class="cj-td clearfix">'
+        					+ '<div class="title">课程号</div>'
+        					+ '<div class="content">' + chengji[i].kch + '</div>'
+        				+ '</li>'
+        				+ '<li class="cj-td clearfix">'
+        					+ '<div class="title">课序号</div>'
+        					+ '<div class="content">' + chengji[i].kxh + '</div>'
+        				+ '</li>'
+        				+ '<li class="cj-td clearfix">'
+        					+ '<div class="title">英文名</div>'
+        					+ '<div class="content">' + chengji[i].ywkcm + '</div>'
+        				+ '</li>'
+        				+ '<li class="cj-td clearfix">'
+        					+ '<div class="title">学分</div>'
+        					+ '<div class="content">' + chengji[i].xf + '</div>'
+        				+ '</li>'
+        				+ '<li class="cj-td clearfix">'
+        					+ '<div class="title">课程属性</div>'
+        					+ '<div class="content">' + chengji[i].kcsx + '</div>'
+        				+ '</li>'
+       				+ '</ul>'
+        		+ '</li>';
+	}
+    $(text).appendTo('.cj-box');
+    })();
+    </script>
+    <script>
+    	(function(){
+    		$('.cj-item').on('click',function() {
+    			$(this).find('.cj-info').slideToggle();
+    		})
+    	})()
+    </script>
+    <script type="text/javascript">
+var duoshuoQuery = {short_name:"ldu"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+</html>
