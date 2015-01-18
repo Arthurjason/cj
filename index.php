@@ -3,12 +3,11 @@
  <head>
  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
- <meta http-equiv="keywords" content="Â³¶«´óÑ§²é³É¼¨,Â³¶«´óÑ§Ğ£Íâ³É¼¨²éÑ¯,Â³¶«´óÑ§³É¼¨" />
- <meta http-equiv="description" content="Â³¶«´óÑ§Ğ£Íâ³É¼¨²éÑ¯ÏµÍ³,ÊÇÂ³´óÑ§ÉúÍøÎª¸üºÃµÄ·şÎñÂ³´óÊ¦Éú¶ø¿ª·¢µÄĞ£Íâ³É¼¨²éÑ¯ÏµÍ³,ÓÃ»§¿ÉÊ¹ÓÃ·ÇĞ£ÄÚÍøÂç²éÑ¯³É¼¨¡£">
- <title>Â³¶«´óÑ§Ğ£Íâ³É¼¨²éÑ¯ÏµÍ³¡ª¡ªÂ³´óÑ§ÉúÍø</title>
+ <meta http-equiv="keywords" content="é²ä¸œå¤§å­¦æŸ¥æˆç»©,é²ä¸œå¤§å­¦æ ¡å¤–æˆç»©æŸ¥è¯¢,é²ä¸œå¤§å­¦æˆç»©" />
+ <meta http-equiv="description" content="é²ä¸œå¤§å­¦æ ¡å¤–æˆç»©æŸ¥è¯¢ç³»ç»Ÿ,æ˜¯é²å¤§å­¦ç”Ÿç½‘ä¸ºæ›´å¥½çš„æœåŠ¡é²å¤§å¸ˆç”Ÿè€Œå¼€å‘çš„æ ¡å¤–æˆç»©æŸ¥è¯¢ç³»ç»Ÿ,ç”¨æˆ·å¯ä½¿ç”¨éæ ¡å†…ç½‘ç»œæŸ¥è¯¢æˆç»©ã€‚">
+ <title>é²ä¸œå¤§å­¦æ ¡å¤–æˆç»©æŸ¥è¯¢ç³»ç»Ÿâ€”â€”é²å¤§å­¦ç”Ÿç½‘</title>
  <link href="css/css.css" rel="stylesheet" type="text/css"/>
  <!--[if IE]> 
-
  <![endif]-->
  <script>
  function submitform(){
@@ -23,11 +22,11 @@
 	 	var zjh=document.cha_form.zjh.value;
 		var mm=document.cha_form.mm.value;
 		if(zjh==""){
-				alert('ÇëÌîĞ´Ñ§ºÅ¡£');
+				alert('è¯·å¡«å†™å­¦å·ã€‚');
 				return 0;
 			}
 		if(mm==""){
-				alert('ÇëÌîĞ´ÃÜÂë¡£');
+				alert('è¯·å¡«å†™å¯†ç ã€‚');
 				return 0;
 			}
 		submitform();
@@ -50,21 +49,21 @@ echo "<script>location.href='http://www.ldustu.com/cj/bq.html'</script>";
 ?>
 
    <div class="center">
-    <h1 class="title">Â³¶«´óÑ§³É¼¨²éÑ¯ÏµÍ³</h1>
+    <h1 class="title">é²ä¸œå¤§å­¦æˆç»©æŸ¥è¯¢ç³»ç»Ÿ</h1>
     <img src="./images/logo.png" class="logo"/>
-    <p class="title2">³É¼¨²éÑ¯</p>
+    <p class="title2">æˆç»©æŸ¥è¯¢</p>
     <div class="form_box">
        <form action="./cha.php" name="cha_form" class="cha_form" method="post" onsubmit="return cha()" onkeydown="keyLogin()">
         <div class="text_box">
-           <input type="text" name="zjh" class="textbox" placeholder="Ñ§ºÅ"/>
-           <input type="password" name="mm" class="textbox" placeholder="ÃÜÂë"/>
+           <input type="text" name="zjh" class="textbox" placeholder="å­¦å·"/>
+           <input type="password" name="mm" class="textbox" placeholder="å¯†ç "/>
          </div>
-        <a href="javascript:cha();" class="submit_btn"><span>²éÑ¯</span></a>
+        <a href="javascript:cha();" class="submit_btn"><span>æŸ¥è¯¢</span></a>
       </form>
      </div>
-    <p class="tip">ÌáÊ¾£ºÇëÊäÈëÑ¡¿ÎÊ±ÓÃµÄÑ§ºÅºÍÃÜÂë¡£</p>
+    <p class="tip">æç¤ºï¼šè¯·è¾“å…¥é€‰è¯¾æ—¶ç”¨çš„å­¦å·å’Œå¯†ç ã€‚</p>
 	 <div class="copy">
-	 Power by <a href="http://www.ldustu.com">Â³´óÑ§ÉúÍø</a>
+	 Power by <a href="http://www.ldustu.com">é²å¤§å­¦ç”Ÿç½‘</a>
 	 </div> 
   </div>
  <div style="display:none"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5796710'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D5796710' type='text/javascript'%3E%3C/script%3E"));</script></div>
