@@ -69,6 +69,7 @@ if($type=='all'){
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($ch,CURLOPT_COOKIEFILE,$cookie_file);
 		$data=curl_exec($ch);
+		file_put_contents("data.txt",$data);
 		$nodata="/\/img\/icon\/alert.gif/";
 		if (preg_match($nodata, $data)) {
 			$data="mima";
