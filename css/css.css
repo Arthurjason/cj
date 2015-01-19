@@ -51,7 +51,7 @@ font-size: 20px;
 color: #fff;
 text-shadow: 0px 1px 2px #000;
 font-weight: 700;
-}.cha_form{
+}.form_box {
 width: 87%;
 margin: 12px auto 0 auto;
 overflow: hidden;
@@ -108,7 +108,8 @@ font-weight: bold;
 }
 .copy a {
 color: #fff;
-}.sy {
+}
+.sy {
 position: absolute;
 bottom: 11px;
 right: 26px;
@@ -121,109 +122,106 @@ border-radius: 10px;
 text-shadow: 0px 1px 1px #000;
 }
 
-/* @group cha styles
--------------------------------------------------*/
-.pic {
-position: fixed;
-left: 0px;
-right: 0px;
-top: 0px;
-bottom: 0px;
-z-index: -100;
-background: url(http://lab.ldsnwangjun.cn/index/images/spring_festival_bg.png) center;
-}
 
-.cha_logo{
-width: 88px;height: 88px;float: left;}
-
-.br{
-background: rgba(255, 255, 255, 0.5);border-radius: 12px;
-}
-.article{
-background: rgba(255, 255, 255, 0.5);border-radius: 15px;
-}
-.t h1{
-
-text-shadow: 1px 1px 8px #fff;
-}
-.join{
-margin-top: 15px;
-text-align: center;
-padding: 10px 0 15px 0;
-font-size: 24px;
-line-height: 40px;
-color: #fff;
-text-shadow: 1px 1px 1px #000;
-}.join a {
-text-align: right;
-display: block;
-font-size: 16px;
-padding-right: 28px;
-color: #000;
-}.join i {
-color: #F00;
-}.join span {
-color: #17F355;
-}
-.join p{
-clear:both;
-margin-top:9px;
-}.doubi{
-overflow:hidden;
-}
-.erweima {
-width: 200px;
-display: block;
-margin: 12px auto;
-}.also{
-color: #fff;
-text-shadow: 1px 1px 1px #000;
-font-size: 20px;
-text-align:center;
-}.follow{
-margin-top:15px;
-padding:10px;
-overflow: hidden;
-}.gz {
-text-align: center;
-clear:both;
-}.doubi span {
-display: inline-block;
-width: 12px;
-height: 12px;
-border: 1px solid #DFDFDF;
-float: left;
-margin-left: 21px;
-border-radius: 8px;
-background: #414141;
-box-shadow: inset 0px 0px 5px 0px #fff;
-}
-.cha a {
-text-shadow: 1px 1px 1px #332F2F;
-color: #FFF;
-}
-.rec_content a{
-color: #000;
-}
-.research{
-font-size:24px;
-margin-top:36px;
-text-align:center;
-
-}
-.research a{
-color:#000;
-
-}
-.arc_body{
-color: #000;
-}#ds-thread #ds-reset .ds-comment-body {
+#ds-thread #ds-reset .ds-comment-body {
 padding-left: 60px;
 color: #000;
 }
-/* @group   styles
+/* @second   styles
 -----------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	border: 0
+}
 
+ul,li {
+	list-style-type: none
+}
+
+body {
+	background: #e5ebf2
+}
+
+.clearfix:before,.clearfix:after {
+	display: table;
+	content: " "
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.cj-wrap {
+	min-width: 300px;
+	max-width: 600px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.cj-second{
+	display: none;
+}
+
+.cj-item {
+	background: #fff;
+	border: 1px solid #888383;
+	border-radius: 3px;
+	margin-bottom: 2px;
+	font-size: 14px;
+	cursor: pointer
+}
+
+.cj-box .title,.cj-box .content {
+	text-align: center;
+	line-height: 32px;
+	width: 50%;
+	float: left;
+	word-break: break-all
+}
+
+.cj-info {
+	display: none
+}
+
+.cj-title {
+	text-align: center;
+	font-size: 19px;
+	margin: 10px
+}
+
+.cj-tip {
+	font-size: 12px;
+	margin: 12px
+}
+
+.cj-tip2 {
+	font-size: 12px;
+	margin: 12px;
+	text-align: center
+}
+
+.cj-tip3 {
+	font-size: 12px;
+	padding: 10px;
+	text-align: center
+}
+
+.cj-tip3 a {
+	display: block;
+	width: 117px;
+	line-height: 26px;
+	text-align: center;
+	border-radius: 7px;
+	background: #8bb1f5;
+	color: #fff;
+	text-decoration: none;
+	margin: 10px auto
+}
+.loading {
+	text-align: center;
+	display: block;
+}
 /* @group   styles
 -----------------------------------------------------*/
 
