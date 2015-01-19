@@ -22,4 +22,3 @@ $siteData = array(
 	'status'=>$row['status'],
 	'host'=>$row['host']
 );
-mysql_close($con);
