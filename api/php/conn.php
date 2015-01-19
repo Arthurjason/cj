@@ -7,13 +7,19 @@ if (!$con)
 
 mysql_select_db("cj", $con);
 
-$result = mysql_query("SELECT * FROM site where `from` = '".$from."'");
-$row = mysql_fetch_array($result);
-	$siteData = array(
-			'from'=>$row['from'],
-			'appid'=>$row['appid'],
-			'secret'=>$row['secret'],
-			'status'=>$row['status'],
-			'host'=>$row['host']
-	);
+$sql = sprintf(
+    "SELECT * FROM '%s' where `from` = '%s'",
+    mysql_real_escape_string('site'),
+    mysql_real_escape_string($from)
+);
 
+$result = mysql_query($sql);
+$row = mysql_fetch_array($result);
+$siteData = array(
+	'from'=>$row['from'],
+	'appid'=>$row['appid'],
+	'secret'=>$row['secret'],
+	'status'=>$row['status'],
+	'host'=>$row['host']
+);
+mysql_close($con);
