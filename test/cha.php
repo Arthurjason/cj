@@ -4,7 +4,7 @@
     $userid=$_POST['userid'];
     $password=$_POST['password'];
 
-	$url = 'http://cj.ldustu.com/api/score?userid='.$userid.'&password='.$password.'&from=ldsn&appid='.$_SERVER["CJ_APPID"].'&secret='.$_SERVER["CJ_SECRET"];
+	$url = 'http://cj.ldustu.com/test/api/php/score.php?userid='.$userid.'&password='.$password.'&from=ldsn&appid='.$_SERVER["CJ_APPID"].'&secret='.$_SERVER["CJ_SECRET"];
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL,$url);

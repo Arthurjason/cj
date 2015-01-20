@@ -28,6 +28,7 @@
 				data = {};
 				data.user = {};
 				data.score = {};
+				$('.cj-box').empty()
 			});
 			
 		} else {
@@ -37,7 +38,6 @@
 				$('.ds-thread').css('display','block');
 			});
 		}
-	
 	};
 
 	var addGoogle = function () {
@@ -47,8 +47,8 @@
 		}
 	};
 
-	var loading = function (flag) {
-		if(flag) {
+	var loading = function () {
+		if($('.loading').css('display') === 'none') {
 			$('.loading').css('display','block');
 		} else {
 			$('.loading').css('display','none');
@@ -68,7 +68,6 @@
 					result = d;
 				}
 				data.score = result;
-				$('.cj-box').empty();
 				getScoreSuccess();
 			},
 			error:function(){
@@ -81,20 +80,16 @@
 
 	var cha = function () {
 		check();
-		loading(true);
 		changePage();
+		loading();
 		getScore();
 	};
 
 	var getScoreSuccess = function () {
-		loading(false);
+		loading();
 		if (data.score.error > 0) {
 			if (data.score.error == 7){
 				alert('密码错误或教务系统服务器出现问题，请重试！');
-				changePage();
-				return;
-			} else if (data.score.error == 8) {
-				alert('本学习成绩查询还没有开始,或者你已经没有考试科目了！');
 				changePage();
 				return;
 			} else {
@@ -103,12 +98,13 @@
 				return;
 			}
 		}
-
+		loading();
 		setData();
 		addGoogle();
 	}
 
 	var restart = function () {
+		loading();
 		changePage();
 	}
 
