@@ -1,4 +1,4 @@
-//(function () {
+(function () {
 
 	var data = {};
 		data.user = {};
@@ -182,7 +182,4 @@
 	init();
 	
 
-//})()
-
-
-
+})()
