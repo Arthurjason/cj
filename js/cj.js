@@ -47,6 +47,13 @@
 		}
 	};
 
+	var addDuoshuo = function () {
+		if($('.duo-shuo').length == 0) {
+			var ds = '<script type="text/javascript" id="duo-shuo">var duoshuoQuery = {short_name:"ldu"};(function() {var ds = document.createElement("script");ds.type = "text/javascript";ds.async = true;ds.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//static.duoshuo.com/embed.js";ds.charset = "UTF-8";(document.getElementsByTagName("head")[0]  || document.getElementsByTagName("body")[0]).appendChild(ds);})();</script>';
+			$(ds).appendTo('body');
+		}
+	}
+
 	var loading = function (flag) {
 		if(flag) {
 			$('.loading').css('display','block');
@@ -83,6 +90,7 @@
 		check();
 		loading(true);
 		changePage();
+		$('.cj-box').empty();
 		getScore();
 	};
 
@@ -106,6 +114,7 @@
 
 		setData();
 		addGoogle();
+		addDuoshuo();
 	}
 
 	var restart = function () {
@@ -115,6 +124,7 @@
 	var setData = function () {
 		var text = '';
 		for ( var i = 0; i < data.score.score.length; i++ ){
+			if(!data.score.score[i].cj) data.score.score[i].cj = '还没出';
 			text += '<li class="cj-item">'
 					+ '<div class="cj-top clearfix">'
 						+ '<div class="title">' + data.score.score[i].kcm + '</div>'

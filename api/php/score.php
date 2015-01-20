@@ -154,7 +154,6 @@
                         'kcsx'=>trim($tr[$i]->find('td:eq(5)')->text()),
                         'cj'=>trim($tr[$i]->find('td:eq(6)')->text()),
                 );
-                if($item['cj'] == '') $item['cj'] = '还没出';
                 $score[$i-1] = $item;
         }
 
