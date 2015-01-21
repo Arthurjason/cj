@@ -1,10 +1,9 @@
 (function () {
 
 	var setStorage = function () {
-		localStorage.user = data.user;
 		if(localStorage.user) {
-			$('input[name="zjh"]').val(localStorage.user.userid);
-			$('input[name="mm"]').val(localStorage.user.password);
+			$('input[name="zjh"]').val(localStorage.userid);
+			$('input[name="mm"]').val(localStorage.password);
 		}
 	}
 
@@ -99,6 +98,8 @@
 		loading(true);
 		changePage();
 		$('.cj-box').empty();
+		localStorage.userid = data.user.userid;
+		localStorage.password = data.user.password;
 		getScore();
 	};
 
