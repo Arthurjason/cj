@@ -1,5 +1,13 @@
 (function () {
 
+	var setStorage = function () {
+		localStorage.user = data.user;
+		if(localStorage.user) {
+			$('input[name="zjh"]').val(localStorage.user.userid);
+			$('input[name="mm"]').val(localStorage.user.password);
+		}
+	}
+
 	var data = {};
 		data.user = {};
 		data.score = {};
@@ -177,6 +185,7 @@
 	}
 
 	var init = function () {
+		setStorage();
 		bindEvent();
 	}
 	init();
