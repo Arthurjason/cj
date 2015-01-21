@@ -1,7 +1,7 @@
 (function () {
 
 	var setStorage = function () {
-		if(localStorage.user) {
+		if(localStorage.userid && localStorage.password) {
 			$('input[name="zjh"]').val(localStorage.userid);
 			$('input[name="mm"]').val(localStorage.password);
 		}
