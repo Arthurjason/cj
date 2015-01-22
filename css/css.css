@@ -219,8 +219,23 @@ body {
 	display: block;
 }
 
-/* @group   styles
+/* @group messge styles
 -----------------------------------------------------*/
+
+.cj-message-tip {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.cj-message-get {
+    background: #5BEDE2;
+    color: #2D10DF;
+    width: 97%;
+    line-height: 30px;
+    display: block;
+    text-align: center;
+}
+
 
 /* @group   styles
 -----------------------------------------------------*/

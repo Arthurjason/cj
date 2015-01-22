@@ -122,6 +122,7 @@
 		}
 
 		setData();
+		setMessage();		
 		addGoogle();
 		addDuoshuo();
 	}
@@ -166,7 +167,39 @@
 		$(text).appendTo('.cj-box');
 	}
 
+	var setMessage = function () {
 
+		var url = {
+			5: '#5',	
+			6: '#6',	
+			7: '#7',	
+			8: '#8',	
+			9: '#9',	
+			10: '#10',	
+			11: '#11',	
+			12: '#12',
+			13: '#13'
+		}
+
+		var price = 0.3;
+
+		var count = data.score.score.length,
+			uncount  = 0;
+		for (var i = 0; i < count; i++) {
+			if(!data.score.score[i].cj) {
+			uncount ++;
+			}
+		}
+		if(uncount < 5) uncount = 5;
+		if(uncount > 13) uncount =13;
+		var money = price * uncount;
+
+		var text = "当前您有" + uncount +"科未出成绩，只需"+ money +"元，即可获取短信提醒成绩的功能！";
+		$('.cj-message-tip').text(text);
+		$('.cj-message-get').click(function () {
+			location.href=url[uncount];		
+		});
+	}
 
 	var bindEvent = function () {
 		$('.form_box').keydown(function (event) {
