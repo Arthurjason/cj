@@ -186,7 +186,7 @@
 		var count = data.score.score.length,
 			uncount  = 0;
 		for (var i = 0; i < count; i++) {
-			if(data.score.score[i].cj != '还没出') {
+			if(data.score.score[i].cj == '还没出') {
 			uncount ++;
 			}
 		}
