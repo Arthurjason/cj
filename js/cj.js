@@ -181,7 +181,7 @@
 			13: '#13'
 		}
 
-		var price = 0.3;
+		var price = 3;
 
 		var count = data.score.score.length,
 			uncount  = 0;
@@ -190,9 +190,7 @@
 			uncount ++;
 			}
 		}
-		if(uncount < 5) uncount = 5;
-		if(uncount > 13) uncount =13;
-		var money = price * uncount;
+		var money = price * uncount / 10;
 
 		var text = "当前您有" + uncount + "科未出成绩，只需" + money + "元，即可获取短信提醒成绩的功能！";
 		$('.cj-message-tip').text(text);
