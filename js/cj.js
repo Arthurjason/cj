@@ -184,7 +184,7 @@
 			12: 'http://wap.koudaitong.com/v2/showcase/goods?alias=qp7a91ke&showsku=true',
 			13: 'http://wap.koudaitong.com/v2/showcase/goods?alias=zdpcebnc&showsku=true',
 			14: 'http://wap.koudaitong.com/v2/showcase/goods?alias=170dadevj&showsku=true',
-			15: 'http://wap.koudaitong.com/v2/showcase/goods?alias=ip17befh&showsku=true';
+			15: 'http://wap.koudaitong.com/v2/showcase/goods?alias=ip17befh&showsku=true'
 		}
 
 		var price = 3;
