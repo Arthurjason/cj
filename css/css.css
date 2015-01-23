@@ -232,7 +232,7 @@ body {
     color: #2D10DF;
     width: 97%;
     line-height: 30px;
-    display: block;
+    display: none;
     text-align: center;
 }
 

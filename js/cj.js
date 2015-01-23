@@ -196,6 +196,7 @@
 
 		var text = "当前您有" + uncount +"科未出成绩，只需"+ money +"元，即可获取短信提醒成绩的功能！";
 		$('.cj-message-tip').text(text);
+		$('.cj-message-get').css('display','block');
 		$('.cj-message-get').click(function () {
 			location.href=url[uncount];		
 		});
