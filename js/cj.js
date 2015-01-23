@@ -186,7 +186,7 @@
 		var count = data.score.score.length,
 			uncount  = 0;
 		for (var i = 0; i < count; i++) {
-			if(!data.score.score[i].cj) {
+			if(data.score.score[i].cj == '还没出') {
 			uncount ++;
 			}
 		}
@@ -194,8 +194,9 @@
 		if(uncount > 13) uncount =13;
 		var money = price * uncount;
 
-		var text = "当前您有" + uncount +"科未出成绩，只需"+ money +"元，即可获取短信提醒成绩的功能！";
+		var text = "当前您有" + uncount + "科未出成绩，只需" + money + "元，即可获取短信提醒成绩的功能！";
 		$('.cj-message-tip').text(text);
+		$('.cj-message-get').css('display','block');
 		$('.cj-message-get').click(function () {
 			location.href=url[uncount];		
 		});
