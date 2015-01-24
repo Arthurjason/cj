@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* CSS Document */
 /* CSS RESET*/
 *{
 	margin:0;
@@ -243,7 +242,8 @@ line-height: 25px;
 .cj-tip3 {
 	font-size: 12px;
 	padding: 10px;
-	text-align: center
+	text-align: center；
+	background: #2d2d2d;
 }
 
 .cj-tip3 a {
@@ -255,7 +255,10 @@ line-height: 25px;
 	background: #8bb1f5;
 	color: #fff;
 	text-decoration: none;
-	margin: 10px auto
+	margin: 10px auto;
+	color: #fff;
+	text-decoration: none;
+	margin: 0px auto 10px;
 }
 .loading {
 	text-align: center;
@@ -271,12 +274,15 @@ line-height: 25px;
 }
 
 .cj-message-get {
-    background: #5BEDE2;
-    color: #2D10DF;
-    width: 97%;
-    line-height: 30px;
-    display: none;
-    text-align: center;
+	background: #4C4D4D;
+	color: #fff;
+	background: -webkit-linear-gradient(left, #0D0B0D, #948A8A);
+	width: 97%;
+	line-height: 30px;
+	display: none;
+	text-align: center;
+	transform: skew(-12deg,0deg);
+	margin: 0 auto;
 }
 
 

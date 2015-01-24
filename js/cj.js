@@ -1,4 +1,4 @@
-//(function () {
+(function () {
 
 	var setStorage = function () {
 		if(localStorage.userid && localStorage.password) {
@@ -221,7 +221,7 @@
 		}
 		var money = price * uncount / 10;
 
-		var text = "当前您有" + uncount + "科未出成绩，只需" + money + "元，即可获取短信提醒成绩的功能！";
+		var text = "同学你好，还在为无时无刻查成绩而烦恼吗？快来定制成绩短信提醒吧！您当前有" + uncount + "科成绩没有出，只需" + money + "元，从此告别 查 时代！";
 		$('.cj-message-tip').text(text);
 		$('.cj-message-get').css('display','block');
 		$('.cj-message-get').click(function () {
@@ -253,4 +253,4 @@
 	init();
 	
 
-//})()
+})()
