@@ -1,4 +1,4 @@
-(function () {
+//(function () {
 
 	var setStorage = function () {
 		if(localStorage.userid && localStorage.password) {
@@ -134,32 +134,55 @@
 	var setData = function () {
 		var text = '';
 		for ( var i = 0; i < data.score.score.length; i++ ){
-			if(!data.score.score[i].cj) data.score.score[i].cj = '还没出';
+			
+			if(!data.score.score[i].cj) data.score.score[i].cj = "?";
+
+			if ( (/[0-9]g/).test(parseInt(data.score.score[i].cj))) {
+				data.score.score[i].cj = parseInt(data.score.score[i].cj);
+			}
+
+
+			var uiStyle;
+			if (data.score.score[i].cj == "?"){
+				uiStyle = '0';
+			} else if (data.score.score[i].cj == 0) {
+				uiStyle = 'un';
+			} else if (data.score.score[i].cj < 60) {
+				uiStyle = '50';
+			} else if (data.score.score[i].cj < 80) {
+				uiStyle = '60';
+			} else if (data.score.score[i].cj < 100) {
+				uiStyle = '80';
+			} else if (data.score.score[i].cj == 100) {
+				uiStyle = '100';
+			} else {
+				uiStyle = 'un';
+			}
 			text += '<li class="cj-item">'
 					+ '<div class="cj-top clearfix">'
 						+ '<div class="title">' + data.score.score[i].kcm + '</div>'
-						+ '<div class="content">' + data.score.score[i].cj + '</div>'
+						+ '<div class="content cj-ui ui-'+ uiStyle +'">' + data.score.score[i].cj + '</div>'
 					+ '</div>'
 					+ '<ul class="cj-info">'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">课程号</div>'
-							+ '<div class="content">' + data.score.score[i].kch + '</div>'
+							+ '<div class="de-title">课程号</div>'
+							+ '<div class="de-content">' + data.score.score[i].kch + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">课序号</div>'
-							+ '<div class="content">' + data.score.score[i].kxh + '</div>'
+							+ '<div class="de-title">课序号</div>'
+							+ '<div class="de-content">' + data.score.score[i].kxh + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">英文名</div>'
-							+ '<div class="content">' + data.score.score[i].ywkcm + '</div>'
+							+ '<div class="de-title">英文名</div>'
+							+ '<div class="de-content">' + data.score.score[i].ywkcm + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">学分</div>'
-							+ '<div class="content">' + data.score.score[i].xf + '</div>'
+							+ '<div class="de-title">学分</div>'
+							+ '<div class="de-content">' + data.score.score[i].xf + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">课程属性</div>'
-							+ '<div class="content">' + data.score.score[i].kcsx + '</div>'
+							+ '<div class="de-title">课程属性</div>'
+							+ '<div class="de-content">' + data.score.score[i].kcsx + '</div>'
 						+ '</li>'
 						+ '</ul>'
 				+ '</li>';
@@ -186,7 +209,7 @@
 		var count = data.score.score.length,
 			uncount  = 0;
 		for (var i = 0; i < count; i++) {
-			if(data.score.score[i].cj == '还没出') {
+			if(data.score.score[i].cj == '?') {
 			uncount ++;
 			}
 		}
@@ -224,4 +247,4 @@
 	init();
 	
 
-})()
+//})()
