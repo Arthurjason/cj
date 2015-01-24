@@ -193,15 +193,21 @@
 	var setMessage = function () {
 
 		var url = {
-			5: '#5',	
-			6: '#6',	
-			7: '#7',	
-			8: '#8',	
-			9: '#9',	
-			10: '#10',	
-			11: '#11',	
-			12: '#12',
-			13: '#13'
+			1: 'http://wap.koudaitong.com/v2/showcase/goods?alias=1f5rvdug7&showsku=true',
+			2: 'http://wap.koudaitong.com/v2/showcase/goods?alias=16htnu4hl&showsku=true',
+			3: 'http://wap.koudaitong.com/v2/showcase/goods?alias=kgb5lxgo&showsku=true',	
+			4: 'http://wap.koudaitong.com/v2/showcase/goods?alias=a5kiaab5&showsku=true',	
+			5: 'http://wap.koudaitong.com/v2/showcase/goods?alias=2hlrogjn&showsku=true',
+			6: 'http://wap.koudaitong.com/v2/showcase/goods?alias=a4epoxkd&showsku=true',
+			7: 'http://wap.koudaitong.com/v2/showcase/goods?alias=nzaclnws&showsku=true',	
+			8: 'http://wap.koudaitong.com/v2/showcase/goods?alias=1fvk2n0v1&showsku=true',	
+			9: 'http://wap.koudaitong.com/v2/showcase/goods?alias=71nqjr&showsku=true',	
+			10: 'http://wap.koudaitong.com/v2/showcase/goods?alias=li3pjirk&showsku=true',	
+			11: 'http://wap.koudaitong.com/v2/showcase/goods?alias=qbihxxh9&showsku=true',	
+			12: 'http://wap.koudaitong.com/v2/showcase/goods?alias=qp7a91ke&showsku=true',
+			13: 'http://wap.koudaitong.com/v2/showcase/goods?alias=zdpcebnc&showsku=true',
+			14: 'http://wap.koudaitong.com/v2/showcase/goods?alias=170dadevj&showsku=true',
+			15: 'http://wap.koudaitong.com/v2/showcase/goods?alias=ip17befh&showsku=true'
 		}
 
 		var price = 3;
