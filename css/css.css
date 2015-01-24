@@ -242,23 +242,23 @@ line-height: 25px;
 .cj-tip3 {
 	font-size: 12px;
 	padding: 10px;
-	text-align: center；
-	background: #2d2d2d;
+	text-align: center
 }
 
 .cj-tip3 a {
 	display: block;
-	width: 117px;
+	width: 134px;
 	line-height: 26px;
 	text-align: center;
 	border-radius: 7px;
-	background: #8bb1f5;
+	background: #3B3C3D;
 	color: #fff;
 	text-decoration: none;
 	margin: 10px auto;
 	color: #fff;
 	text-decoration: none;
 	margin: 0px auto 10px;
+	font-size: 14px;
 }
 .loading {
 	text-align: center;
@@ -270,7 +270,14 @@ line-height: 25px;
 
 .cj-message-tip {
     padding: 10px;
-    font-size: 14px;
+	font-size: 14px;
+	background: #251616;
+	background: -webkit-linear-gradient(left, #948A8A, #0D0B0D);
+	color: #fff;
+	transform: skew(12deg,0deg);
+	line-height: 20px;
+	width: 93%;
+	margin: 0 auto 5px;
 }
 
 .cj-message-get {
