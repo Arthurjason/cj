@@ -219,6 +219,10 @@
 			uncount ++;
 			}
 		}
+		if (uncount == 0) {
+			$('.cj-message-tip').text('呀～成绩全部出来了哦～记得下次考试用我们的短信提醒功能哦～');
+			return;
+		}
 		var money = price * uncount / 10;
 
 		var text = "同学你好，还在为无时无刻查成绩而烦恼吗？快来定制成绩短信提醒吧！您当前有" + uncount + "科成绩没有出，只需" + money + "元，从此告别 查 时代！";
