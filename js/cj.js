@@ -220,8 +220,8 @@
 			}
 		}
 		if (uncount == 0) {
-			$('.cj-message-tip').text('呀～成绩全部出来了哦～记得下次考试用我们的短信提醒功能哦～');
-			return;
+ 			$('.cj-message-tip').text('呀～成绩全部出来了哦～记得下次考试用我们的短信提醒功能哦～');
+			 return;
 		}
 		var money = price * uncount / 10;
 
