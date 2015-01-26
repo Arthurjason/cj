@@ -90,7 +90,7 @@
                 return;
         }
 
-        $url='http://202.194.48.11:9004/loginAction.do';
+        $url='http://202.194.48.12:9002/loginAction.do';
         $post="zjh=$zjh&mm=$mm";
         $cookie_file=tempnam('./tmp','cookie');
         $ch = curl_init($url) ;
@@ -103,7 +103,7 @@
         curl_close($ch);
 
 
-        $url='http://202.194.48.11:9004/bxqcjcxAction.do';
+        $url='http://202.194.48.12:9002/bxqcjcxAction.do';
         $ch = curl_init() ;
         curl_setopt($ch, CURLOPT_URL,$url) ;
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
