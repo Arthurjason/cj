@@ -134,32 +134,55 @@
 	var setData = function () {
 		var text = '';
 		for ( var i = 0; i < data.score.score.length; i++ ){
-			if(!data.score.score[i].cj) data.score.score[i].cj = '还没出';
+			
+			if(!data.score.score[i].cj) data.score.score[i].cj = "?";
+
+			if ( (/[0-9]g/).test(parseInt(data.score.score[i].cj))) {
+				data.score.score[i].cj = parseInt(data.score.score[i].cj);
+			}
+
+
+			var uiStyle;
+			if (data.score.score[i].cj == "?"){
+				uiStyle = '0';
+			} else if (data.score.score[i].cj == 0) {
+				uiStyle = 'un';
+			} else if (data.score.score[i].cj < 60) {
+				uiStyle = '50';
+			} else if (data.score.score[i].cj < 80) {
+				uiStyle = '60';
+			} else if (data.score.score[i].cj < 100) {
+				uiStyle = '80';
+			} else if (data.score.score[i].cj == 100) {
+				uiStyle = '100';
+			} else {
+				uiStyle = 'un';
+			}
 			text += '<li class="cj-item">'
 					+ '<div class="cj-top clearfix">'
 						+ '<div class="title">' + data.score.score[i].kcm + '</div>'
-						+ '<div class="content">' + data.score.score[i].cj + '</div>'
+						+ '<div class="content cj-ui ui-'+ uiStyle +'">' + data.score.score[i].cj + '</div>'
 					+ '</div>'
 					+ '<ul class="cj-info">'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">课程号</div>'
-							+ '<div class="content">' + data.score.score[i].kch + '</div>'
+							+ '<div class="de-title">课程号</div>'
+							+ '<div class="de-content">' + data.score.score[i].kch + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">课序号</div>'
-							+ '<div class="content">' + data.score.score[i].kxh + '</div>'
+							+ '<div class="de-title">课序号</div>'
+							+ '<div class="de-content">' + data.score.score[i].kxh + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">英文名</div>'
-							+ '<div class="content">' + data.score.score[i].ywkcm + '</div>'
+							+ '<div class="de-title">英文名</div>'
+							+ '<div class="de-content">' + data.score.score[i].ywkcm + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">学分</div>'
-							+ '<div class="content">' + data.score.score[i].xf + '</div>'
+							+ '<div class="de-title">学分</div>'
+							+ '<div class="de-content">' + data.score.score[i].xf + '</div>'
 						+ '</li>'
 						+ '<li class="cj-td clearfix">'
-							+ '<div class="title">课程属性</div>'
-							+ '<div class="content">' + data.score.score[i].kcsx + '</div>'
+							+ '<div class="de-title">课程属性</div>'
+							+ '<div class="de-content">' + data.score.score[i].kcsx + '</div>'
 						+ '</li>'
 						+ '</ul>'
 				+ '</li>';
@@ -170,32 +193,41 @@
 	var setMessage = function () {
 
 		var url = {
-			5: '#5',	
-			6: '#6',	
-			7: '#7',	
-			8: '#8',	
-			9: '#9',	
-			10: '#10',	
-			11: '#11',	
-			12: '#12',
-			13: '#13'
+			1: 'http://wap.koudaitong.com/v2/showcase/goods?alias=1f5rvdug7&showsku=true',
+			2: 'http://wap.koudaitong.com/v2/showcase/goods?alias=16htnu4hl&showsku=true',
+			3: 'http://wap.koudaitong.com/v2/showcase/goods?alias=kgb5lxgo&showsku=true',	
+			4: 'http://wap.koudaitong.com/v2/showcase/goods?alias=a5kiaab5&showsku=true',	
+			5: 'http://wap.koudaitong.com/v2/showcase/goods?alias=2hlrogjn&showsku=true',
+			6: 'http://wap.koudaitong.com/v2/showcase/goods?alias=a4epoxkd&showsku=true',
+			7: 'http://wap.koudaitong.com/v2/showcase/goods?alias=nzaclnws&showsku=true',	
+			8: 'http://wap.koudaitong.com/v2/showcase/goods?alias=1fvk2n0v1&showsku=true',	
+			9: 'http://wap.koudaitong.com/v2/showcase/goods?alias=71nqjr&showsku=true',	
+			10: 'http://wap.koudaitong.com/v2/showcase/goods?alias=li3pjirk&showsku=true',	
+			11: 'http://wap.koudaitong.com/v2/showcase/goods?alias=qbihxxh9&showsku=true',	
+			12: 'http://wap.koudaitong.com/v2/showcase/goods?alias=qp7a91ke&showsku=true',
+			13: 'http://wap.koudaitong.com/v2/showcase/goods?alias=zdpcebnc&showsku=true',
+			14: 'http://wap.koudaitong.com/v2/showcase/goods?alias=170dadevj&showsku=true',
+			15: 'http://wap.koudaitong.com/v2/showcase/goods?alias=ip17befh&showsku=true'
 		}
 
-		var price = 0.3;
+		var price = 3;
 
 		var count = data.score.score.length,
 			uncount  = 0;
 		for (var i = 0; i < count; i++) {
-			if(!data.score.score[i].cj) {
+			if(data.score.score[i].cj == '?') {
 			uncount ++;
 			}
 		}
-		if(uncount < 5) uncount = 5;
-		if(uncount > 13) uncount =13;
-		var money = price * uncount;
+		if (uncount == 0) {
+ 			$('.cj-message-tip').text('呀～成绩全部出来了哦～记得下次考试用我们的短信提醒功能哦～');
+			 return;
+		}
+		var money = price * uncount / 10;
 
-		var text = "当前您有" + uncount +"科未出成绩，只需"+ money +"元，即可获取短信提醒成绩的功能！";
-		$('.cj-message-tip').text(text);
+		var text = "最新成绩短信通知<br/>同学你好，还在为无时无刻查成绩而烦恼吗？快来定制成绩短信提醒吧！您当前有 " + uncount + " 科成绩没有出，只需 " + money + " 元，从此告别 查 时代! <br>详情可咨询qq 1307183747<br/><span style=\"color:#A36E6E\">仅收取短信服务费与服务器运营费用！</span>";
+		$('.cj-message-tip').html(text);
+		$('.cj-message-get').css('display','block');
 		$('.cj-message-get').click(function () {
 			location.href=url[uncount];		
 		});
