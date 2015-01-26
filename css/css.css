@@ -269,26 +269,24 @@ line-height: 25px;
 -----------------------------------------------------*/
 
 .cj-message-tip {
-    padding: 10px;
-	font-size: 14px;
-	background: #251616;
-	background: -webkit-linear-gradient(left, #948A8A, #0D0B0D);
-	color: #fff;
-	transform: skew(12deg,0deg);
-	line-height: 20px;
-	width: 93%;
-	margin: 0 auto 5px;
+padding: 10px;
+font-size: 14px;
+background: #E0E5C3;
+color: #D229C3;
+line-height: 20px;
+width: 93%;
+border-radius: 7px;
+margin: 0 auto 5px;
 }
 
 .cj-message-get {
-	background: #4C4D4D;
+	border-radius: 4px;
 	color: #fff;
-	background: -webkit-linear-gradient(left, #0D0B0D, #948A8A);
+	background: rgb(54, 63, 239);
 	width: 97%;
 	line-height: 30px;
 	display: none;
 	text-align: center;
-	transform: skew(-12deg,0deg);
 	margin: 0 auto;
 }
 
