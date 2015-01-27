@@ -225,7 +225,7 @@
 		}
 		var money = price * uncount / 10;
 
-		var text = "最新成绩短信通知<br/>同学你好，还在为无时无刻查成绩而烦恼吗？<br>快来定制成绩短信提醒吧！您当前有 " + uncount + " 科成绩没有出，只需 " + money + " 元，从此告别 查 时代! <br>详情可咨询qq 1307183747<br/><span style=\"color:#A36E6E\">仅收取短信服务费与服务器运营费用！</span>";
+		var text = "最新成绩短信通知服务<br/>同学你好，还在为无时无刻查成绩而烦恼吗？<br>快来定制成绩短信提醒吧！您当前有 " + uncount + " 科成绩没有出，只需 " + money + " 元，从此告别 查 时代! <br>详情可咨询qq 1307183747<br/><span style=\"color:#A36E6E\">仅收取短信服务费与服务器运营费用！</span>";
 		$('.cj-message-tip').html(text);
 		$('.cj-message-get').css('display','block');
 		$('.cj-message-get').click(function () {
