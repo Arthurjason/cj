@@ -22,7 +22,7 @@
 					 $userid.'&password='.
 					 $password.'&from=ldsn&appid='.
 					 $_SERVER["CJ_APPID"].'&secret='.
-					 $_SERVER["CJ_SECRET"].'&type='.$type;
+					 $_SERVER["CJ_SECRET"];
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL,$url);
