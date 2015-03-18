@@ -1,7 +1,6 @@
 <?php
     $from = $_REQUEST['from'];
     $host = $_SERVER["REMOTE_ADDR"];
-    $type = $_REQUEST['type'];
 
     if(!$from){
             $content = array(
