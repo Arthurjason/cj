@@ -4,21 +4,7 @@
     $userid		= $_POST['zjh'];
     $password	= $_POST['mm'];
     $type 		= $_POST['type'];
-    switch ($type) {
-    	case '001' :
-    		$url_type = 'oldScore';
-    		break;
-    	case '002':
-    		$url_type = 'failScore';
-            break;
-    	case '003' :
-    		$url_type = 'score';
-            break;
-    	default:
-    		$url_type = 'score';
-    		break;
-    }
-	$url 		= 'http://cj.ldustu.com/test1/cj/api/php/'.$url_type.'.php?userid='.
+	$url 		= 'http://cj.ldustu.com/test1/cj/api/php/'.$type.'.php?userid='.
 					 $userid.'&password='.
 					 $password.'&from=ldsn&appid='.
 					 $_SERVER["CJ_APPID"].'&secret='.
