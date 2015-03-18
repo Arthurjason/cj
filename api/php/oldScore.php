@@ -4,7 +4,7 @@
 
         error_reporting(E_ALL^E_NOTICE);
         $URI = dirname(__FILE__).'/';
-
+	$type = 001;
         include('./check.php');
 		mysql_query("UPDATE site SET count=count+1 where `from` = '".$from."'");
 		mysql_close($con);
