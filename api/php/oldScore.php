@@ -51,7 +51,6 @@
         $re0 = pq(".displayTag");
         $re0 = '<html>'.$re0.'</html>';
         phpQuery::newDocumentHTML($re0);
-         //echo $re0;
          $i = 0;
          do{ 
                
@@ -69,8 +68,7 @@
                 $json = json_encode($content);
                 echo $json;
                 return;
-        }  
-        //echo count($table);
+        }
         for($x =1; $x<count($table);$x++){
 		$get = null;
             $re0 = '<html>'.$re0.'</html>';
@@ -113,17 +111,14 @@
 		for($bb = 0;$bb<$n1;$bb++){
 			if($aa == $bb){
 			$b++;
-			
 			}else{
-
 				if($one[$aa][title] == $one[$bb][title]){
 					if($one[$aa]==null){
 						array_splice($one,$aa,1);
 					}		
 					$one[$aa][score] = array_merge($one[$aa][score], $one[$bb][score]);
 					array_splice($one, $bb, 1 );					
-							
-			}	
+				}	
 			}
 		}
 	}	
