@@ -4,7 +4,7 @@
 
         include('./check.php');
 
-	
+	$type = 003;
 	mysql_query("UPDATE site SET count=count+1 where `from` = '".$from."'");
 	mysql_close($con);
         
