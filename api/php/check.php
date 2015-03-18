@@ -1,6 +1,7 @@
 <?php
     $from = $_REQUEST['from'];
     $host = $_SERVER["REMOTE_ADDR"];
+    $type = $_REQUEST['type'];
 
     if(!$from){
             $content = array(
@@ -67,14 +68,15 @@
                     echo $json;
                     return;
             }
-            if($siteData['power'] != 1){
-            		$content = array(
-            				'error'	=> 9,
-            				'data'	=> 'low power',
-            			);
-            		$json = json_encode($content);
-            		echo $json;
-            		return;
-            }            
+
+            if(!strstr($siteData['func_num'],$type)){
+                    $content = array(
+                        'error' => 9,
+                        'data'  => 'no power'
+                        );
+                    $json = json_encode($content);
+                    echo $json;
+                    return;
+            }
 
     }

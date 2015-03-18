@@ -17,10 +17,10 @@ $result = mysql_query($sql);
 $row = mysql_fetch_array($result);
 
 $siteData = array(
-	'from'   =>$row['from'],
-	'appid'  =>$row['appid'],
-	'secret' =>$row['secret'],
-	'status' =>$row['status'],
-	'host'   =>$row['host'],
-  'power'  =>$row['power']
+	'from'     =>$row['from'],
+	'appid'    =>$row['appid'],
+	'secret'   =>$row['secret'],
+	'status'   =>$row['status'],
+	'host'     =>$row['host'],
+  'func_num' =>$row['func_num']
 );

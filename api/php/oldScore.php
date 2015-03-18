@@ -1,5 +1,6 @@
 <?php
-		include('./phpQuery/phpQuery.php');
+
+	include('./phpQuery/phpQuery.php');
 
         error_reporting(E_ALL^E_NOTICE);
         $URI = dirname(__FILE__).'/';
@@ -33,7 +34,7 @@
         $data=curl_exec($ch);
         $data = iconv("GB2312","UTF-8",$data);
         
-        if($data == ''){
+       if($data == ''){
                 $content = array(
                         'error' => 7,
                         'data'  => 'password error or server error'
@@ -50,15 +51,14 @@
         $re0 = pq(".displayTag");
         $re0 = '<html>'.$re0.'</html>';
         phpQuery::newDocumentHTML($re0);
-         
+         //echo $re0;
          $i = 0;
          do{ 
+               
+                $table[$i] = pq("table:eq($i)");
                 $i++;
-                $j = $i-1;
-                $table[$i] = pq("table:eq($j)");
-                
-         }while($table[$i] != '');
-         
+         }while($table[$i-1] != '');
+         //echo count($table);
         if(count($table) == 1){
 
                 $content = array(
@@ -70,32 +70,36 @@
                 echo $json;
                 return;
         }  
-        
+        //echo count($table);
         for($x =1; $x<count($table);$x++){
-                //echo $table[$x];
-                  $k =  0;
-                  $e = $x-1;
+		$get = null;
+            $re0 = '<html>'.$re0.'</html>';
+            phpQuery::newDocumentHTML($re0);
+                  $e =0;
                  do{    
-                        $k++;
-                        $count = pq("table:eq($e) tr");
-                 }while($count[$k] != '');
-
-                $num = count($count);
+                        
+                        $count[$e] = pq("table:eq($e) tr");
+                        $e++;
+                 }while($count[$e-1] != '');
+                //echo $count[$x-1];
+                $num = count($count[$x-1]);
                 for($a =1;$a < $num; $a++){
                         $last = array(
-                        'kch'   =>trim($table[$x]->find('tr:eq('.$a.') td:eq(0)')->text()),
-                        'kxh'   =>trim($table[$x]->find('tr:eq('.$a.') td:eq(1)')->text()),
-                        'kcm'   =>trim($table[$x]->find('tr:eq('.$a.') td:eq(2)')->text()),
-                        'ywkcm' =>trim($table[$x]->find('tr:eq('.$a.') td:eq(3)')->text()),
-                        'xf'    =>trim($table[$x]->find('tr:eq('.$a.') td:eq(4)')->text()),
-                        'kcsx'  =>trim($table[$x]->find('tr:eq('.$a.') td:eq(5)')->text()),
-                        'cj'    =>trim($table[$x]->find('tr:eq('.$a.') td:eq(6)')->text()),
+                        'kch'   =>trim($table[$x-1]->find('tr:eq('.$a.') td:eq(0)')->text()),
+                        'kxh'   =>trim($table[$x-1]->find('tr:eq('.$a.') td:eq(1)')->text()),
+                        'kcm'   =>trim($table[$x-1]->find('tr:eq('.$a.') td:eq(2)')->text()),
+                        'ywkcm' =>trim($table[$x-1]->find('tr:eq('.$a.') td:eq(3)')->text()),
+                        'xf'    =>trim($table[$x-1]->find('tr:eq('.$a.') td:eq(4)')->text()),
+                        'kcsx'  =>trim($table[$x-1]->find('tr:eq('.$a.') td:eq(5)')->text()),
+                        'cj'    =>trim($table[$x-1]->find('tr:eq('.$a.') td:eq(6)')->text()),
                         );
                         $get[$a-1] = $last;
-                }
+        	  
+	      }
                 $data = '<html>'.$data.'</html>';
                 phpQuery::newDocumentHTML($data);
-                $title = pq("#tblHead:eq($e) b");
+		$c = $x-1;
+                $title = pq("#tblHead:eq($c) b");
                 $title = strip_tags((string)$title);
                 $one[$x-1] = array(
                         'title'=>$title,
@@ -103,7 +107,26 @@
                         );
 
         }
+	$n1 = count($one)-1;
+	for($aa = 0;$aa<$n1;$aa++){
 
+		for($bb = 0;$bb<$n1;$bb++){
+			if($aa == $bb){
+			$b++;
+			
+			}else{
+
+				if($one[$aa][title] == $one[$bb][title]){
+					if($one[$aa]==null){
+						array_splice($one,$aa,1);
+					}		
+					$one[$aa][score] = array_merge($one[$aa][score], $one[$bb][score]);
+					array_splice($one, $bb, 1 );					
+							
+			}	
+			}
+		}
+	}	
                    $content = array(
                         'error'=>0,
                         'data' =>$one,

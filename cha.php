@@ -1,26 +1,28 @@
 <?php
 	error_reporting(E_ALL^E_NOTICE);
     
-    $userid		= $_POST['userid'];
-    $password	= $_POST['password'];
+    $userid		= $_POST['zjh'];
+    $password	= $_POST['mm'];
     $type 		= $_POST['type'];
     switch ($type) {
-    	case 'old' :
+    	case '001' :
     		$url_type = 'oldScore';
     		break;
-    	case 'fail':
+    	case '002':
     		$url_type = 'failScore';
-    	case 'now' :
+            break;
+    	case '003' :
     		$url_type = 'score';
+            break;
     	default:
     		$url_type = 'score';
     		break;
     }
-	$url 		= 'http://cj.ldustu.com/api/'.$url_type.'?userid='.
+	$url 		= 'http://cj.ldustu.com/test1/cj/api/php/'.$url_type.'.php?userid='.
 					 $userid.'&password='.
 					 $password.'&from=ldsn&appid='.
 					 $_SERVER["CJ_APPID"].'&secret='.
-					 $_SERVER["CJ_SECRET"];
+					 $_SERVER["CJ_SECRET"].'&type='.$type;
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL,$url);
