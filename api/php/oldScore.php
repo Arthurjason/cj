@@ -57,7 +57,6 @@
                 $table[$i] = pq("table:eq($i)");
                 $i++;
          }while($table[$i-1] != '');
-         //echo count($table);
         if(count($table) == 1){
 
                 $content = array(
@@ -79,7 +78,6 @@
                         $count[$e] = pq("table:eq($e) tr");
                         $e++;
                  }while($count[$e-1] != '');
-                //echo $count[$x-1];
                 $num = count($count[$x-1]);
                 for($a =1;$a < $num; $a++){
                         $last = array(
